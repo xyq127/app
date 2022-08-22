@@ -11,7 +11,7 @@ public class TestController {
 
     @GetMapping({"","/","/index","/main"})
     public String index() {
-        return "holity/index";
+        return "vihoadmin/login";
     }
 
 }
