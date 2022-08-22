@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.app.mapper.ActivityMapper">
+
+    <resultMap id="BaseResultMap" type="com.app.entity.Activity">
+        <id property="activityNum" column="activity_num" jdbcType="INTEGER"/>
+        <result property="organizationNum" column="organization_num" jdbcType="INTEGER"/>
+        <result property="activityId" column="activity_id" jdbcType="VARCHAR"/>
+        <result property="activityName" column="activity_name" jdbcType="VARCHAR"/>
+        <result property="activityDetail" column="activity_detail" jdbcType="VARCHAR"/>
+        <result property="activityBegintime" column="activity_begintime" jdbcType="TIMESTAMP"/>
+        <result property="activityEndtime" column="activity_endtime" jdbcType="TIMESTAMP"/>
+        <result property="activityLocation" column="activity_location" jdbcType="VARCHAR"/>
+        <result property="activityNeedpeople" column="activity_needpeople" jdbcType="INTEGER"/>
+        <result property="activityNotice" column="activity_notice" jdbcType="VARCHAR"/>
+        <result property="activityPublishtime" column="activity_publishtime" jdbcType="TIMESTAMP"/>
+        <result property="activitySignddl" column="activity_signddl" jdbcType="TIMESTAMP"/>
+        <result property="activityState" column="activity_state" jdbcType="VARCHAR"/>
+        <result property="adminNum" column="admin_num" jdbcType="INTEGER"/>
+        <result property="activityCheckin" column="activity_checkin" jdbcType="VARCHAR"/>
+        <result property="activityLeaderid" column="activity_leaderid" jdbcType="INTEGER"/>
+        <result property="activityChecktime" column="activity_checktime" jdbcType="TIMESTAMP"/>
+        <result property="activityRemark" column="activity_remark" jdbcType="VARCHAR"/>
+        <result property="activityIsdeleted" column="activity_isdeleted" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        activity_num,organization_num,activity_id,
+        activity_name,activity_detail,activity_begintime,
+        activity_endtime,activity_location,activity_needpeople,
+        activity_notice,activity_publishtime,activity_signddl,
+        activity_state,admin_num,activity_checkin,
+        activity_leaderid,activity_checktime,activity_remark,
+        activity_isdeleted
+    </sql>
+
+    <!-- 存储过程：新增用户信息，返回自增主键 -->
+    <insert id="demo_proc_add_activity" statementType="CALLABLE" parameterType="com.app.entity.Activity">
+        {CALL demo_proc_add_activity(#{activityName,mode=IN,jdbcType=VARCHAR},
+                                     #{activityDetail,mode=IN,jdbcType=VARCHAR},
+--                                      #{activityBegintime,mode=IN,jdbcType=DATE},
+--                                      #{activityEndtime,mode=IN,jdbcType=DATE},
+                                     #{activityLocation,mode=IN,jdbcType=VARCHAR},
+--                                      #{activityNeedpeople,mode=IN,jdbcType=INTEGER},
+                                     #{activityNotice,mode=IN,jdbcType=VARCHAR},
+--                                      #{activitySignddl,mode=IN,jdbcType=DATE},
+                                     #{msg,mode=OUT,jdbcType=VARCHAR})
+        }
+    </insert>
+    <!--    <select id="demo_select" statementType="CALLABLE" parameterType="com.app.entity.Activity">-->
+    <!--        {CALL demo_select(#{organizationId,mode=IN,jdbcType=VARCHAR},-->
+    <!--                          #{num,mode=OUT,jdbcType=MAP})-->
+    <!--        }-->
+    <!--    </select>-->
+
+    <!--    <select id="demo_select" statementType="CALLABLE" resultType="com.app.entity.Activity">-->
+    <!--        {CALL demo_select(#{organizationId,mode=IN,jdbcType=VARCHAR})-->
+    <!--            }-->
+    <!--    </select>-->
+
+
+    <!--调用数据库中的organization_insert_activity存储过程-->
+    <insert id="organization_insert_activity" statementType="CALLABLE" parameterType="com.app.entity.Activity">
+        {call organization_insert_activity(#{loginId,mode=IN,jdbcType=VARCHAR},
+                                           #{activityName,mode=IN,jdbcType=VARCHAR},
+                                           #{activityDetail,mode=IN,jdbcType=VARCHAR},
+                                           #{activityBegintime,mode=IN,jdbcType=DATE},
+                                           #{activityEndtime,mode=IN,jdbcType=DATE},
+                                           #{activityLocation,mode=IN,jdbcType=VARCHAR},
+                                           #{activityNeedpeople,mode=IN,jdbcType=VARCHAR},
+                                           #{activityNotice,mode=IN,jdbcType=VARCHAR},
+                                           #{activitySignddl,mode=IN,jdbcType=DATE},
+                                           #{msg,mode=OUT,jdbcType=VARCHAR})
+            }
+    </insert>
+    <select id="selectAllByOrganizationNum" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from activity
+        where
+        organization_num = #{organizationNum,jdbcType=NUMERIC}
+    </select>
+    <select id="selectAllByOrganizationNumAndActivityState" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from activity
+        where
+        organization_num = #{organizationNum,jdbcType=NUMERIC}
+        AND activity_state = #{activityState,jdbcType=VARCHAR}
+    </select>
+    <update id="updateActivityIsdeletedByActivityNum">
+update activity
+ set activity_isdeleted = #{activityIsdeleted,jdbcType=NUMERIC}
+where
+activity_num = #{activityNum,jdbcType=NUMERIC}
+</update>
+    <select id="selectByActivityNum" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from activity
+        where
+        activity_num = #{activityNum,jdbcType=NUMERIC}
+    </select>
+    <select id="selectAllByOrganizationNumAndActivityStateAndActivityIsdeleted" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from activity
+        where
+        organization_num = #{organizationNum,jdbcType=NUMERIC}
+        AND activity_state = #{activityState,jdbcType=VARCHAR}
+        AND activity_isdeleted = #{activityIsdeleted,jdbcType=NUMERIC}
+    </select>
+    <select id="selectAllByActivityName" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from activity
+        where
+        activity_name = #{activityName,jdbcType=VARCHAR}
+    </select>
+    <select id="selectAllByActivityStateAndActivityIsdeleted" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from activity
+        where
+        activity_state = #{activityState,jdbcType=VARCHAR}
+        AND activity_isdeleted = #{activityIsdeleted,jdbcType=NUMERIC}
+    </select>
+    <select id="selectByActivityName" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from activity
+        where
+        activity_name = #{activityName,jdbcType=VARCHAR}
+    </select>
+
+
+    <!--调用数据库中的admin_check_activity存储过程-->
+    <insert id="admin_check_activity" statementType="CALLABLE" parameterType="com.app.entity.Activity">
+        {call admin_check_activity(#{loginId,mode=IN,jdbcType=VARCHAR},
+                                   #{activityNum,mode=IN,jdbcType=NUMERIC},
+                                   #{isPass,mode=IN,jdbcType=NUMERIC},
+                                   #{remark,mode=IN,jdbcType=VARCHAR},
+                                   #{msg,mode=OUT,jdbcType=VARCHAR})
+            }
+    </insert>
+
+
+</mapper>

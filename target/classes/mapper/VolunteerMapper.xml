@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.app.mapper.VolunteerMapper">
+
+    <resultMap id="BaseResultMap" type="com.app.entity.Volunteer">
+            <id property="volunteerNum" column="volunteer_num" jdbcType="INTEGER"/>
+            <result property="volunteerId" column="volunteer_id" jdbcType="VARCHAR"/>
+            <result property="volunteerPassword" column="volunteer_password" jdbcType="VARCHAR"/>
+            <result property="volunteerName" column="volunteer_name" jdbcType="VARCHAR"/>
+            <result property="volunteerRegisterdate" column="volunteer_registerdate" jdbcType="DATE"/>
+            <result property="volunteerGender" column="volunteer_gender" jdbcType="VARCHAR"/>
+            <result property="volunteerBirth" column="volunteer_birth" jdbcType="DATE"/>
+            <result property="volunteerTel" column="volunteer_tel" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        volunteer_num,volunteer_id,volunteer_password,
+        volunteer_name,volunteer_registerdate,volunteer_gender,
+        volunteer_birth,volunteer_tel
+    </sql>
+    <select id="selectByVolunteerName" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from volunteer
+        where
+        volunteer_name = #{volunteerName,jdbcType=VARCHAR}
+    </select>
+    <select id="selectByVolunteerId" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from volunteer
+        where
+        volunteer_id = #{volunteerId,jdbcType=VARCHAR}
+    </select>
+    <select id="selectAllByVolunteerTel" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from volunteer
+        where
+        volunteer_tel = #{volunteerTel,jdbcType=VARCHAR}
+    </select>
+    <select id="countByVolunteerTel" resultType="int">
+        select count(*)
+        from volunteer
+        where volunteer_tel = #{signUpTel,jdbcType=VARCHAR}
+    </select>
+    <insert id="insertSelective">
+        insert into volunteer
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="volunteerNum != null">volunteer_num,</if>
+            <if test="volunteerId != null">volunteer_id,</if>
+            <if test="volunteerPassword != null">volunteer_password,</if>
+            <if test="volunteerName != null">volunteer_name,</if>
+            <if test="volunteerRegisterdate != null">volunteer_registerdate,</if>
+            <if test="volunteerGender != null">volunteer_gender,</if>
+            <if test="volunteerBirth != null">volunteer_birth,</if>
+            <if test="volunteerTel != null">volunteer_tel,</if>
+        </trim>
+        values
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="volunteerNum != null">#{volunteerNum,jdbcType=INTEGER},</if>
+            <if test="volunteerId != null">#{volunteerId,jdbcType=VARCHAR},</if>
+            <if test="volunteerPassword != null">#{volunteerPassword,jdbcType=VARCHAR},</if>
+            <if test="volunteerName != null">#{volunteerName,jdbcType=VARCHAR},</if>
+            <if test="volunteerRegisterdate != null">#{volunteerRegisterdate,jdbcType=DATE},</if>
+            <if test="volunteerGender != null">#{volunteerGender,jdbcType=VARCHAR},</if>
+            <if test="volunteerBirth != null">#{volunteerBirth,jdbcType=DATE},</if>
+            <if test="volunteerTel != null">#{volunteerTel,jdbcType=VARCHAR},</if>
+        </trim>
+    </insert>
+
+    <!--调用数据库中的volunteer_insert存储过程-->
+    <insert id="volunteer_insert" statementType="CALLABLE" parameterType="com.app.entity.Volunteer">
+        {call volunteer_insert(#{volunteerName,mode=IN,jdbcType=VARCHAR},
+                               #{volunteerTel,mode=IN,jdbcType=VARCHAR},
+                               #{volunteerPassword,mode=IN,jdbcType=VARCHAR},
+                               #{volunteerId,mode=OUT,jdbcType=VARCHAR})
+        }
+    </insert>
+    <select id="selectAllByVolunteerId" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from volunteer
+        where
+        volunteer_id = #{volunteerId,jdbcType=VARCHAR}
+    </select>
+
+
+</mapper>
