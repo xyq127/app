@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="TemplatesSettings">
+    <option name="templateConfigs">
+      <TemplateContext>
+        <option name="generateConfig">
+          <GenerateConfig>
+            <option name="annotationType" value="MYBATIS_PLUS3" />
+            <option name="basePackage" value="com.app" />
+            <option name="basePath" value="src/main/java" />
+            <option name="encoding" value="UTF-8" />
+            <option name="extraClassSuffix" value="" />
+            <option name="ignoreFieldPrefix" value="" />
+            <option name="ignoreFieldSuffix" value="" />
+            <option name="ignoreTablePrefix" value="" />
+            <option name="ignoreTableSuffix" value="" />
+            <option name="moduleName" value="app" />
+            <option name="modulePath" value="$PROJECT_DIR$" />
+            <option name="moduleUIInfoList">
+              <list>
+                <ModuleUIInfo>
+                  <option name="basePath" value="${domain.basePath}" />
+                  <option name="configName" value="mapperInterface" />
+                  <option name="encoding" value="${domain.encoding}" />
+                  <option name="fileName" value="${domain.fileName}Mapper" />
+                  <option name="fileNameWithSuffix" value="${domain.fileName}Mapper.java" />
+                  <option name="modulePath" value="" />
+                  <option name="packageName" value="${domain.basePackage}.mapper" />
+                </ModuleUIInfo>
+                <ModuleUIInfo>
+                  <option name="basePath" value="src/main/resources" />
+                  <option name="configName" value="mapperXml" />
+                  <option name="encoding" value="${domain.encoding}" />
+                  <option name="fileName" value="${domain.fileName}Mapper" />
+                  <option name="fileNameWithSuffix" value="${domain.fileName}Mapper.xml" />
+                  <option name="modulePath" value="" />
+                  <option name="packageName" value="mapper" />
+                </ModuleUIInfo>
+                <ModuleUIInfo>
+                  <option name="basePath" value="${domain.basePath}" />
+                  <option name="configName" value="serviceInterface" />
+                  <option name="encoding" value="${domain.encoding}" />
+                  <option name="fileName" value="${domain.fileName}Service" />
+                  <option name="fileNameWithSuffix" value="${domain.fileName}Service.java" />
+                  <option name="modulePath" value="" />
+                  <option name="packageName" value="${domain.basePackage}.service" />
+                </ModuleUIInfo>
+              </list>
+            </option>
+            <option name="needsComment" value="true" />
+            <option name="relativePackage" value="domain" />
+            <option name="superClass" value="" />
+            <option name="tableUIInfoList">
+              <list>
+                <TableUIInfo>
+                  <option name="className" value="Admin" />
+                  <option name="tableName" value="admin" />
+                </TableUIInfo>
+                <TableUIInfo>
+                  <option name="className" value="Answer" />
+                  <option name="tableName" value="answer" />
+                </TableUIInfo>
+                <TableUIInfo>
+                  <option name="className" value="Attention" />
+                  <option name="tableName" value="attention" />
+                </TableUIInfo>
+                <TableUIInfo>
+                  <option name="className" value="City" />
+                  <option name="tableName" value="city" />
+                </TableUIInfo>
+                <TableUIInfo>
+                  <option name="className" value="MassageSystem" />
+                  <option name="tableName" value="massage_system" />
+                </TableUIInfo>
+                <TableUIInfo>
+                  <option name="className" value="MessagePrivate" />
+                  <option name="tableName" value="message_private" />
+                </TableUIInfo>
+                <TableUIInfo>
+                  <option name="className" value="Option" />
+                  <option name="tableName" value="option" />
+                </TableUIInfo>
+                <TableUIInfo>
+                  <option name="className" value="Post" />
+                  <option name="tableName" value="post" />
+                </TableUIInfo>
+                <TableUIInfo>
+                  <option name="className" value="PostPicture" />
+                  <option name="tableName" value="post_picture" />
+                </TableUIInfo>
+                <TableUIInfo>
+                  <option name="className" value="PostReply" />
+                  <option name="tableName" value="post_reply" />
+                </TableUIInfo>
+                <TableUIInfo>
+                  <option name="className" value="Province" />
+                  <option name="tableName" value="province" />
+                </TableUIInfo>
+                <TableUIInfo>
+                  <option name="className" value="Question" />
+                  <option name="tableName" value="question" />
+                </TableUIInfo>
+                <TableUIInfo>
+                  <option name="className" value="Swindle" />
+                  <option name="tableName" value="swindle" />
+                </TableUIInfo>
+                <TableUIInfo>
+                  <option name="className" value="User" />
+                  <option name="tableName" value="user" />
+                </TableUIInfo>
+              </list>
+            </option>
+            <option name="templatesName" value="mybatis-plus3" />
+            <option name="useLombokPlugin" value="true" />
+          </GenerateConfig>
+        </option>
+        <option name="moduleName" value="app" />
+        <option name="projectPath" value="$PROJECT_DIR$" />
+        <option name="templateName" value="mybatis-plus3" />
+      </TemplateContext>
+    </option>
+  </component>
+</project>

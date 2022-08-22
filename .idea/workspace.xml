@@ -7,6 +7,43 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="app@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="app@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="app@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="app: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="app@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="app: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -24,6 +61,11 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -59,7 +101,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1661134032059</updated>
-      <workItem from="1661134039812" duration="286000" />
+      <workItem from="1661134039812" duration="852000" />
     </task>
     <servers />
   </component>
@@ -67,38 +109,42 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1397" height="234" key="GridCell.Tab.0.bottom" timestamp="1661134192148">
+    <state x="313" y="139" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1661134654447">
       <screen x="0" y="0" width="1440" height="960" />
     </state>
-    <state width="1397" height="234" key="GridCell.Tab.0.bottom/0.0.1440.960@0.0.1440.960" timestamp="1661134192148" />
-    <state width="1397" height="234" key="GridCell.Tab.0.center" timestamp="1661134192147">
+    <state x="313" y="139" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.960@0.0.1440.960" timestamp="1661134654447" />
+    <state width="1397" height="332" key="GridCell.Tab.0.bottom" timestamp="1661134800569">
       <screen x="0" y="0" width="1440" height="960" />
     </state>
-    <state width="1397" height="234" key="GridCell.Tab.0.center/0.0.1440.960@0.0.1440.960" timestamp="1661134192147" />
-    <state width="1397" height="234" key="GridCell.Tab.0.left" timestamp="1661134192147">
+    <state width="1397" height="332" key="GridCell.Tab.0.bottom/0.0.1440.960@0.0.1440.960" timestamp="1661134800569" />
+    <state width="1397" height="332" key="GridCell.Tab.0.center" timestamp="1661134800569">
       <screen x="0" y="0" width="1440" height="960" />
     </state>
-    <state width="1397" height="234" key="GridCell.Tab.0.left/0.0.1440.960@0.0.1440.960" timestamp="1661134192147" />
-    <state width="1397" height="234" key="GridCell.Tab.0.right" timestamp="1661134192147">
+    <state width="1397" height="332" key="GridCell.Tab.0.center/0.0.1440.960@0.0.1440.960" timestamp="1661134800569" />
+    <state width="1397" height="332" key="GridCell.Tab.0.left" timestamp="1661134800569">
       <screen x="0" y="0" width="1440" height="960" />
     </state>
-    <state width="1397" height="234" key="GridCell.Tab.0.right/0.0.1440.960@0.0.1440.960" timestamp="1661134192147" />
-    <state width="1397" height="234" key="GridCell.Tab.1.bottom" timestamp="1661134192148">
+    <state width="1397" height="332" key="GridCell.Tab.0.left/0.0.1440.960@0.0.1440.960" timestamp="1661134800569" />
+    <state width="1397" height="332" key="GridCell.Tab.0.right" timestamp="1661134800569">
       <screen x="0" y="0" width="1440" height="960" />
     </state>
-    <state width="1397" height="234" key="GridCell.Tab.1.bottom/0.0.1440.960@0.0.1440.960" timestamp="1661134192148" />
-    <state width="1397" height="234" key="GridCell.Tab.1.center" timestamp="1661134192148">
+    <state width="1397" height="332" key="GridCell.Tab.0.right/0.0.1440.960@0.0.1440.960" timestamp="1661134800569" />
+    <state width="1397" height="332" key="GridCell.Tab.1.bottom" timestamp="1661134800569">
       <screen x="0" y="0" width="1440" height="960" />
     </state>
-    <state width="1397" height="234" key="GridCell.Tab.1.center/0.0.1440.960@0.0.1440.960" timestamp="1661134192148" />
-    <state width="1397" height="234" key="GridCell.Tab.1.left" timestamp="1661134192148">
+    <state width="1397" height="332" key="GridCell.Tab.1.bottom/0.0.1440.960@0.0.1440.960" timestamp="1661134800569" />
+    <state width="1397" height="332" key="GridCell.Tab.1.center" timestamp="1661134800569">
       <screen x="0" y="0" width="1440" height="960" />
     </state>
-    <state width="1397" height="234" key="GridCell.Tab.1.left/0.0.1440.960@0.0.1440.960" timestamp="1661134192148" />
-    <state width="1397" height="234" key="GridCell.Tab.1.right" timestamp="1661134192148">
+    <state width="1397" height="332" key="GridCell.Tab.1.center/0.0.1440.960@0.0.1440.960" timestamp="1661134800569" />
+    <state width="1397" height="332" key="GridCell.Tab.1.left" timestamp="1661134800569">
       <screen x="0" y="0" width="1440" height="960" />
     </state>
-    <state width="1397" height="234" key="GridCell.Tab.1.right/0.0.1440.960@0.0.1440.960" timestamp="1661134192148" />
+    <state width="1397" height="332" key="GridCell.Tab.1.left/0.0.1440.960@0.0.1440.960" timestamp="1661134800569" />
+    <state width="1397" height="332" key="GridCell.Tab.1.right" timestamp="1661134800569">
+      <screen x="0" y="0" width="1440" height="960" />
+    </state>
+    <state width="1397" height="332" key="GridCell.Tab.1.right/0.0.1440.960@0.0.1440.960" timestamp="1661134800569" />
     <state x="222" y="123" key="SettingsEditor" timestamp="1661134054678">
       <screen x="0" y="0" width="1440" height="960" />
     </state>
