@@ -201,18 +201,7 @@
             <div class="sidebar-user text-center"><a class="setting-primary" href="javascript:void(0)"><i data-feather="settings"></i></a><img class="img-90 rounded-circle" src="/viho/assets/images/dashboard/1.png" alt="">
                 <div class="badge-bottom"><span class="badge badge-primary">New</span></div><a href="manage_type.html">
                     <h6 class="mt-3 f-14 f-w-600" id="organization_name">Admin</h6></a>
-                <p class="mb-0 font-roboto">Manage Organization and Activity</p>
-                <ul>
-                    <li><span><span class="counter">2</span>year</span>
-                        <p>志龄</p>
-                    </li>
-                    <li><span><span class="counter" id="count_activity">14</span>个</span>
-                        <p>组织</p>
-                    </li>
-                    <li><span><span class="counter">100</span>次</span>
-                        <p>志愿活动</p>
-                    </li>
-                </ul>
+
             </div>
             <nav>
                 <div class="main-navbar">
@@ -256,7 +245,7 @@
                                     <h6>系统消息管理</h6>
                                 </div>
                             </li>
-                            <li class="dropdown"><a class="nav-link menu-title" href=""><i data-feather="box"></i><span>管理系统消息</span></a>
+                            <li class="dropdown"><a class="nav-link menu-title" href="manage_msg.html"><i data-feather="box"></i><span>管理系统消息</span></a>
                             </li>
                             <li class="dropdown"><a class="nav-link menu-title" href="publish_msg.html"><i data-feather="box"></i><span>发布系统消息</span></a>
                             </li>
@@ -268,65 +257,65 @@
         </header>
         <!-- Page Sidebar Ends-->
         <div class="page-body">
-            <!-- Container-fluid starts-->
-            <div class="container-fluid dashboard-default-sec">
-                <div class="card">
-                    <div class="card-header pb-0">
-                        <h4>资料</h4>
-                    </div>
-                    <div class="form-group row">
-                        <div class="form-group row">
-                            <label class="col-sm-3 col-form-label text-end">组织编号</label>
-                            <div class="col-xl-5 col-sm-9">
-                                <div class="input-group">
-                                    <input class="form-control" id="org_id" type="text" disabled="disabled  ">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="card">
+                            <div class="card-header pb-0">
+                                <h5>诈骗类型管理</h5>
+                                <div>
+                                    <button class="btn btn-outline-info" type="button" >添加</button>
+                                </div>
+                            </div>
+
+                            <div class="card-body">
+                                <div id="basicScenario">
+                                    <table class="table table-hover table-bordered " id="auditActivity_table">
+                                        <thead>
+                                        <td class="text-center">诈骗类型</td>
+                                        <td class="text-center">类型介绍</td>
+                                        <td class="text-center">操作</td>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td class="text-center">电信诈骗</td>
+                                            <td class="text-center">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</td>
+                                            <td class="text-center">
+                                                <button class="btn btn-outline-warning" type="button" >修改</button>
+                                                <button class="btn btn-outline-secondary" type="button" >删除</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">网络诈骗</td>
+                                            <td class="text-center">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</td>
+                                            <td class="text-center">
+                                                <button class="btn btn-outline-warning" type="button" >修改</button>
+                                                <button class="btn btn-outline-secondary" type="button" >删除</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">校园贷</td>
+                                            <td class="text-center">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</td>
+                                            <td class="text-center">
+                                                <button class="btn btn-outline-warning" type="button" >修改</button>
+                                                <button class="btn btn-outline-secondary" type="button" >删除</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">裸聊</td>
+                                            <td class="text-center">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</td>
+                                            <td class="text-center">
+                                                <button class="btn btn-outline-warning" type="button" >修改</button>
+                                                <button class="btn btn-outline-secondary" type="button" >删除</button>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="form-group row">
-                            <label class="col-sm-3 col-form-label text-end">组织名称</label>
-                            <div class="col-xl-5 col-sm-9">
-                                <div class="input-group">
-                                    <input class="form-control" id="org_name" type="text">
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="form-group row">
-                            <label class="col-sm-3 col-form-label text-end">组织简介</label>
-                            <div class="col-xl-5 col-sm-9">
-                                <div class="input-group">
-                                    <textarea class="form-control" id="org_introduction" rows="3"></textarea>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label class="col-sm-3 col-form-label text-end">成立日期</label>
-                            <div class="col-xl-5 col-sm-9">
-                                <div class="input-group">
-                                    <input class="datepicker-here form-control digits" type="text" data-language="en"
-                                           id="start_time" disabled="disabled" value="2022.03.24" >
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="form-group row">
-                            <label class="col-sm-3 col-form-label text-end"></label>
-                            <div class="col-xl-5 col-sm-9">
-                                <div class="input-group">
-                                    <button class="btn btn-primary" type="submit" id="info_change">修改</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Container-fluid Ends-->
                     </div>
                 </div>
-                <!-- footer start-->
             </div>
         </div>
         <!-- footer start-->
