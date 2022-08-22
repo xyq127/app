@@ -3,7 +3,9 @@ package com.app.controller;
 
 import com.app.entity.Activity;
 import com.app.entity.Msg;
+import com.app.entity.Organization;
 import com.app.service.ActivityService;
+import com.app.service.MassageSystemService;
 import com.app.service.OrganizationService;
 import com.app.service.ParticipateService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +27,10 @@ public class AdminController {
 
     @Autowired
     ActivityService activityService;
+
+    @Autowired
+    MassageSystemService massageSystemService;
+
 
     //查询该num的所有未审查的活动
     @RequestMapping(value = "/findAuditActivityByState", method = RequestMethod.GET)
@@ -54,4 +60,22 @@ public class AdminController {
         activityService.passActByAdminIdWithStatue(map);
         return (String) map.get("msg");
     }
+
+
+    //发布系统消息
+    @RequestMapping(value = "/publishMsg", method = RequestMethod.POST)
+    @ResponseBody
+    public Msg infoChange(@RequestParam(value = "name") String name,
+                          @RequestParam(value = "msgdetail") String msgdetail,
+                          Authentication authentication) {
+        //获取当前登录的用户名，参数为Authentication
+        User user = (User) authentication.getPrincipal();
+        Organization organization = new Organization();
+        organization.setOrganizationName(name);
+        organization.setOrganizationIntroduction(msgdetail);
+//        Boolean aBoolean = organizationService.changeInfo(user.getUsername(), organization);
+        return Msg.success();
+    }
+
+
 }

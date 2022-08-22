@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.app.mapper.MassageSystemMapper">
+
+    <resultMap id="BaseResultMap" type="com.app.domain.MassageSystem">
+            <id property="sysMessageNum" column="sys_message_num" jdbcType="INTEGER"/>
+            <result property="sysMessageId" column="sys_message_id" jdbcType="VARCHAR"/>
+            <result property="userNum" column="user_num" jdbcType="INTEGER"/>
+            <result property="sysMessageDetail" column="sys_message_detail" jdbcType="VARCHAR"/>
+            <result property="sysMessageIsdeleted" column="sys_message_isdeleted" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        sys_message_num,sys_message_id,user_num,
+        sys_message_detail,sys_message_isdeleted
+    </sql>
+</mapper>
